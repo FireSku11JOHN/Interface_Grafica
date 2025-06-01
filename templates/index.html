@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cradastro de usuário</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/tabela.css">
+    <link rel="stylesheet" href="../css/cadastro.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <img src="../assets/UserZ.svg" alt="Logo do site" class="logo">
+        <h1 class="titulo">Cadastro de Usuário</h1>
+    </header>
+    <main>
+        <section class="usuarios">
+            <h2 class="usuarios_titulo">Usuários</h2>
+            <!-- Mensagem quando não houver usuários cadastrados -->
+            <!-- <div class="div-msg-erro">
+                <p class="msg-erro ">Nenhum usuário cadastrado</p>
+            </div> -->
+            <div class="tabela-container">
+                <table class="tabela-usuarios">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Data de criação</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>11</td>
+                        <td>Flávia Alcântra</td>
+                        <td>flaviaall3100@gamil.com</td>
+                        <td>31-05-2025 15:39</td>
+                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Carlos Emanuel</td>
+                        <td>emanuel6867@outlook.com</td>
+                        <td>02-06-2025 10:22</td>
+                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Jéssica Silva Lima</td>
+                        <td>jessicalima@gmail.com</td>
+                        <td>02-05-2025 12:40</td>
+                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Kaun Henrique Martins</td>
+                        <td>kauanzinmartins@email.com</td>
+                        <td>03-06-2025 18:05</td>
+                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Kaun Henrique Martins</td>
+                        <td>kauanzinmartins@email.com</td>
+                        <td>03-06-2025 18:05</td>
+                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Kaun Henrique Martins</td>
+                        <td>kauanzinmartins@email.com</td>
+                        <td>03-06-2025 18:05</td>
+                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Kaun Henrique Martins</td>
+                        <td>kauanzinmartins@email.com</td>
+                        <td>03-06-2025 18:05</td>
+                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Kaun Henrique Martins</td>
+                        <td>kauanzinmartins@email.com</td>
+                        <td>03-06-2025 18:05</td>
+                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Kaun Henrique Martins</td>
+                        <td>kauanzinmartins@email.com</td>
+                        <td>03-06-2025 18:05</td>
+                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Kaun Henrique Martins</td>
+                        <td>kauanzinmartins@email.com</td>
+                        <td>03-06-2025 18:05</td>
+                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Kaun Henrique Martins</td>
+                        <td>kauanzinmartins@email.com</td>
+                        <td>03-06-2025 18:05</td>
+                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="cadastro">
+            <h3 class="cadastro_titulo">Cadastrar novo usuário</h3>
+            <div class="cadastrar-container">
+                <form action="" method="post" autocomplete="off">
+                    <div class="grupo-input">
+                        <label for="id-id">ID</label>
+                        <input type="text" inputmode="numeric" pattern="[0-9]*" title="Digite somente números" name="id-user" id="id-id">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="nome-id">Nome</label>
+                        <input type="text" name="nome-user" id="nome-id">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="email-id">Email</label>
+                        <input type="email" name="email-user" id="email-id">
+                    </div>
+                    <input type="submit" value="Adicionar" class="btn-cadastrar">
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- <footer class="footer">
+        <p>Sistema de Cadastro de Usuários</p>
+        <p>Desenvolvido por João Silva - RA: 12345678</p>
+        <p>Faculdade de Tecnologia XYZ - Disciplina: Desenvolvimento Web</p>
+        <p>&copy; 2025 Todos os direitos reservados.</p>
+    </footer> -->
+</body>
+</html>

@@ -1,0 +1,67 @@
+.tabela-container {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 0 20px ;
+    border-radius: 8px;
+    width: calc(100% - 20px);
+    overflow-y: auto;
+    overflow-x: auto ;
+    margin: 0 0 10px 10px;
+    height: calc(100% - 53.2px);
+}
+
+.tabela-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+}
+
+.tabela-usuarios thead th {
+    text-align: left;
+    padding: 8px 0;
+    color: black;
+    border-bottom: 1px solid #ccc;
+    font-family: "Istok Web", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.tabela-usuarios tbody td {
+    padding: 8px 0px;
+    border-bottom: 1px solid #999;
+    font-family: "Istok Web", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.tabela-usuarios td:first-child {
+    padding-right: 20px;
+}
+
+.tabela-usuarios td:last-child {
+    text-align: right;
+    border-left: 1px solid #999;
+}
+
+.tabela-usuarios a {
+    color: white;
+    /* margin-left: 10px; */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tabela-usuarios a:hover {
+    text-decoration: underline;
+}
+
+.tabela-container::-webkit-scrollbar {
+    width: 5px;
+    
+}
+.tabela-container::-webkit-scrollbar-thumb {
+    background-color: #ffffff18;
+    border-radius: 4px;
+}
+
+.tabela-usuarios tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
