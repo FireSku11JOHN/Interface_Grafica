@@ -53,15 +53,37 @@
     text-decoration: underline;
 }
 
-.tabela-container::-webkit-scrollbar {
+/* .tabela-container::-webkit-scrollbar {
     width: 5px;
     
 }
 .tabela-container::-webkit-scrollbar-thumb {
     background-color: #ffffff18;
     border-radius: 4px;
-}
+} */
 
 .tabela-usuarios tbody tr:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(245, 142, 142, 0.1);
+}
+
+@media (max-width: 320px) {
+    .tabela-container {
+        width: 100%;
+        margin: 0;
+        height: calc(100% - 53.2px);
+    }
+
+    .tabela-usuarios thead th {
+        width: 1000px;
+        text-align: left;
+        /* padding: 1px; */
+        margin: 0px;
+        font-size: 14px;
+        /* height: 2px; */
+        /* text-align: justify; */
+    }
+
+    .tabela-usuarios tbody td {
+        font-size: 13px;
+    }
 }

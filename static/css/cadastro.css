@@ -51,7 +51,9 @@ form {
 }
 
 #id-id {
-    width: 50px;
+    min-width: 30px;
+    max-width: 50px;
+    /* width: 50px; */
 }
 
 #nome-id {
@@ -89,4 +91,14 @@ form {
         #FF01E6 0%, 
         #FF01E6 99%
     );
+}
+
+@media (max-width: 800px) {
+    form {
+        flex-wrap: wrap;
+    }
+
+    .btn-cadastrar {
+        margin-bottom: 10px;
+    }
 }
