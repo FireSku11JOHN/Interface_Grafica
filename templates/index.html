@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cradastro de usuário</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/tabela.css">
-    <link rel="stylesheet" href="../css/cadastro.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tabela.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}">
+    <link rel="stylesheet" href="/css/tabela.css">
+    <link rel="stylesheet" href="/css/cadastro.css">
 </head>
 <body>
     <header class="cabecalho">
-        <img src="../assets/UserZ.svg" alt="Logo do site" class="logo">
+        <img src="{{ url_for('static', filename='assets/UserZ.svg') }}" alt="Logo do site" class="logo">
         <h1 class="titulo">Cadastro de Usuário</h1>
     </header>
     <main>
