@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Usuário</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/editar.css') }}">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 class="titulo">Editar Usuário</h1>
+    </header>
+
+    <main>
+        <section class="editar">
+            <h3 class="titulo-editar">Editar dados do usuário</h3>
+            <div class="editar-container">
+                <form method="POST">
+                    <div class="editar-input ">
+                        <label>ID</label>
+                        <input type="text" value="{{ usuario.id }}" readonly>
+                    </div>
+                    <div class="editar-input">
+                        <label>Nome</label>
+                        <input type="text" name="nome-user" value="{{ usuario.nome }}" required>
+                    </div>
+                    <div class="editar-input">
+                        <label>Email</label>
+                        <input type="email" name="email-user" value="{{ usuario.email }}" required>
+                    </div>
+                    <div class="div-btn">
+                        <input type="submit" value="Salvar" class="btn-salvar" >
+                        <a href="{{ url_for('index') }}" class="btn-cancelar">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
