@@ -23,7 +23,7 @@
 
 form {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -33,7 +33,7 @@ form {
     margin: 8px 0 29px;
     color: #FFFFFF;
     font-family: "Istok Web", sans-serif;
-    font-size: 17px;
+    font-size: 19px;
     font-weight: 400;
 }
 
@@ -42,7 +42,7 @@ form {
     background-color: transparent;
     color: #FFFFFF;
     border-radius: 8px;
-    padding: 5px;
+    padding: 8px;
 }
 
 .grupo-input input:focus{
@@ -51,15 +51,17 @@ form {
 }
 
 #id-id {
-    width: 50px;
+    min-width: 30px;
+    max-width: 50px;
+    /* width: 50px; */
 }
 
 #nome-id {
-    width: 250px;
+    width: 290px;
 }
 
 #email-id {
-    width: 250px;
+    width: 290px;
 }
 
 .btn-cadastrar {
@@ -89,4 +91,14 @@ form {
         #FF01E6 0%, 
         #FF01E6 99%
     );
+}
+
+@media (max-width: 800px) {
+    form {
+        flex-wrap: wrap;
+    }
+
+    .btn-cadastrar {
+        margin-bottom: 10px;
+    }
 }

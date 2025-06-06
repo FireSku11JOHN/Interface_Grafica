@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cradastro de usuário</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/tabela.css">
-    <link rel="stylesheet" href="../css/cadastro.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tabela.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}">
+    <link rel="stylesheet" href="/static/css/tabela.css">
+    <link rel="stylesheet" href="/static/css/cadastro.css">
 </head>
 <body>
     <header class="cabecalho">
-        <img src="../assets/UserZ.svg" alt="Logo do site" class="logo">
+        <img src="{{ url_for('static', filename='assets/UserZ.svg') }}" alt="Logo do site" class="logo">
         <h1 class="titulo">Cadastro de Usuário</h1>
     </header>
     <main>
@@ -32,85 +36,20 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>11</td>
-                        <td>Flávia Alcântra</td>
-                        <td>flaviaall3100@gamil.com</td>
-                        <td>31-05-2025 15:39</td>
-                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>Carlos Emanuel</td>
-                        <td>emanuel6867@outlook.com</td>
-                        <td>02-06-2025 10:22</td>
-                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>Jéssica Silva Lima</td>
-                        <td>jessicalima@gmail.com</td>
-                        <td>02-05-2025 12:40</td>
-                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>Kaun Henrique Martins</td>
-                        <td>kauanzinmartins@email.com</td>
-                        <td>03-06-2025 18:05</td>
-                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>Kaun Henrique Martins</td>
-                        <td>kauanzinmartins@email.com</td>
-                        <td>03-06-2025 18:05</td>
-                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>Kaun Henrique Martins</td>
-                        <td>kauanzinmartins@email.com</td>
-                        <td>03-06-2025 18:05</td>
-                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>Kaun Henrique Martins</td>
-                        <td>kauanzinmartins@email.com</td>
-                        <td>03-06-2025 18:05</td>
-                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>Kaun Henrique Martins</td>
-                        <td>kauanzinmartins@email.com</td>
-                        <td>03-06-2025 18:05</td>
-                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>Kaun Henrique Martins</td>
-                        <td>kauanzinmartins@email.com</td>
-                        <td>03-06-2025 18:05</td>
-                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>Kaun Henrique Martins</td>
-                        <td>kauanzinmartins@email.com</td>
-                        <td>03-06-2025 18:05</td>
-                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>Kaun Henrique Martins</td>
-                        <td>kauanzinmartins@email.com</td>
-                        <td>03-06-2025 18:05</td>
-                        <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
-                    </tr>
-                    
+                        {% for usuario in usuarios %}
+                        <tr>
+                            <td>{{ usuario.id }}</td>
+                            <td>{{ usuario.nome }}</td>
+                            <td>{{ usuario.email }}</td>
+                            <td>{{ usuario.data_criacao.strftime('%d-%m-%Y %H:%M') }}</td>
+                            <td class="acoes">
+                                <a href="{{ url_for('edit_usuario', id=usuario.id) }}">Editar <img src="/static/assets/edit_icon.svg" alt=""></a> 
+                                <a href="{{ url_for('delete_usuario', id=usuario.id) }}" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir <img src="/static/assets/delete_icon.svg" alt=""></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
                     </tbody>
+
                 </table>
             </div>
         </section>
@@ -118,18 +57,18 @@
         <section class="cadastro">
             <h3 class="cadastro_titulo">Cadastrar novo usuário</h3>
             <div class="cadastrar-container">
-                <form action="" method="post" autocomplete="off">
+                <form action="/adicionar" method="post" autocomplete="off">
                     <div class="grupo-input">
                         <label for="id-id">ID</label>
-                        <input type="text" inputmode="numeric" pattern="[0-9]*" title="Digite somente números" name="id-user" id="id-id">
+                        <input type="text" inputmode="numeric" pattern="[0-9]*" title="Digite somente números" name="id-user" id="id-id" required>
                     </div>
                     <div class="grupo-input">
                         <label for="nome-id">Nome</label>
-                        <input type="text" name="nome-user" id="nome-id">
+                        <input type="text" name="nome-user" id="nome-id" required>
                     </div>
                     <div class="grupo-input">
                         <label for="email-id">Email</label>
-                        <input type="email" name="email-user" id="email-id">
+                        <input type="email" name="email-user" id="email-id" required>
                     </div>
                     <input type="submit" value="Adicionar" class="btn-cadastrar">
                 </form>
