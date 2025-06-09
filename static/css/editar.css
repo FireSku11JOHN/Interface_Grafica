@@ -1,16 +1,19 @@
 .editar {
     display: flex;
-    /* justify-content: space-between; */
     width: 600px;
     border: 1px solid white;
     border-radius: 8px;
     margin-top: 50px;
-    /* background-color: rgba(255, 255, 255, 0.3); */
 }
 
 .editar-container {
     display: flex;
     margin: 30px 0
+}
+
+.titulo_msg-erro{
+    display: flex;
+    flex-direction: column;
 }
 
 .titulo-editar {
@@ -40,7 +43,7 @@
 
 .editar-input input:focus {
     outline: #1502ba solid 2px;
-    /* box-shadow: none; */
+    box-shadow: none;
 }
 
 .editar-input input {
@@ -82,3 +85,31 @@
     padding: 8px 16px;
     text-decoration: none;
 }
+
+.mensagem-erro {
+    width: 70%;
+    background-color: #ffebf0;
+    color: #b3005f;
+    padding: 12px 16px;
+    border: 2px solid #ff4da6;
+    border-left: 6px solid #ff01e6;
+    border-radius: 10px;
+    margin: 20px 0 20px 10px;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(255, 1, 230, 0.2);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

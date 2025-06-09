@@ -13,12 +13,21 @@
 
     <main>
         <section class="editar">
-            <h3 class="titulo-editar">Editar dados do usuário</h3>
+            <div class="titulo_msg-erro">
+                <h3 class="titulo-editar">Editar dados do usuário</h3>
+                <!-- Mostra erro se existir -->
+                {% if erro %}
+                <div class="mensagem-erro">
+                    {{ erro }}
+                </div>
+                {% endif %}
+            </div>
+
             <div class="editar-container">
                 <form method="POST">
-                    <div class="editar-input ">
+                    <div class="editar-input">
                         <label>ID</label>
-                        <input type="text" value="{{ usuario.id }}" readonly>
+                        <input type="number" name="id-user" value="{{ usuario.id }}" required>
                     </div>
                     <div class="editar-input">
                         <label>Nome</label>
@@ -29,12 +38,13 @@
                         <input type="email" name="email-user" value="{{ usuario.email }}" required>
                     </div>
                     <div class="div-btn">
-                        <input type="submit" value="Salvar" class="btn-salvar" >
+                        <input type="submit" value="Salvar" class="btn-salvar">
                         <a href="{{ url_for('index') }}" class="btn-cancelar">Cancelar</a>
                     </div>
                 </form>
             </div>
         </section>
     </main>
+
 </body>
 </html>

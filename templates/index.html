@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cradastro de usuário</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/tabela.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}">
-    <link rel="stylesheet" href="/static/css/tabela.css">
-    <link rel="stylesheet" href="/static/css/cadastro.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/editar.css') }}">
 </head>
 <body>
     <header class="cabecalho">
@@ -20,42 +18,47 @@
     <main>
         <section class="usuarios">
             <h2 class="usuarios_titulo">Usuários</h2>
-            <!-- Mensagem quando não houver usuários cadastrados -->
-            <!-- <div class="div-msg-erro">
-                <p class="msg-erro ">Nenhum usuário cadastrado</p>
-            </div> -->
+                <!-- Mostra aviso quando não houver usuários ainda -->
             <div class="tabela-container">
-                <table class="tabela-usuarios">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Data de criação</th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        {% for usuario in usuarios %}
-                        <tr>
-                            <td>{{ usuario.id }}</td>
-                            <td>{{ usuario.nome }}</td>
-                            <td>{{ usuario.email }}</td>
-                            <td>{{ usuario.data_criacao.strftime('%d-%m-%Y %H:%M') }}</td>
-                            <td class="acoes">
-                                <a href="{{ url_for('edit_usuario', id=usuario.id) }}">Editar <img src="/static/assets/edit_icon.svg" alt=""></a> 
-                                <a href="{{ url_for('delete_usuario', id=usuario.id) }}" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir <img src="/static/assets/delete_icon.svg" alt=""></a>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
+                {% if usuarios %}
+                    <table class="tabela-usuarios">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>Data de criação</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for usuario in usuarios %}
+                            <tr>
+                                <td>{{ usuario.id }}</td>
+                                <td>{{ usuario.nome }}</td>
+                                <td>{{ usuario.email }}</td>
+                                <td>{{ usuario.data_criacao.strftime('%d-%m-%Y %H:%M') }}</td>
+                                <td class="acoes">
+                                    <a href="{{ url_for('edit_usuario', id=usuario.id) }}">Editar <img src="/static/assets/edit_icon.svg" alt=""></a> 
+                                    <a href="{{ url_for('delete_usuario', id=usuario.id) }}" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir <img src="/static/assets/delete_icon.svg" alt=""></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <div class="div-msg-erro">
+                        <p class="msg-erro">Nenhum usuário cadastrado</p>
+                    </div>
+                {% endif %}
+            </div>
 
-                </table>
             </div>
         </section>
 
         <section class="cadastro">
             <h3 class="cadastro_titulo">Cadastrar novo usuário</h3>
+
             <div class="cadastrar-container">
                 <form action="/adicionar" method="post" autocomplete="off">
                     <div class="grupo-input">
@@ -72,6 +75,10 @@
                     </div>
                     <input type="submit" value="Adicionar" class="btn-cadastrar">
                 </form>
+                <!-- Mostra erro se existir -->
+                {% if mensagem_erro %}
+                <div class="mensagem-erro">{{ mensagem_erro }}</div>
+                {% endif %}
             </div>
         </section>
     </main>

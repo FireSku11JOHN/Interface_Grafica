@@ -44,7 +44,6 @@
 
 .tabela-usuarios a {
     color: white;
-    /* margin-left: 10px; */
     text-decoration: none;
     font-weight: bold;
 }
@@ -53,19 +52,10 @@
     text-decoration: underline;
 }
 
-/* .tabela-container::-webkit-scrollbar {
-    width: 5px;
-    
-}
-.tabela-container::-webkit-scrollbar-thumb {
-    background-color: #ffffff18;
-    border-radius: 4px;
-} */
-
-.tabela-usuarios tbody tr,.acoes > a:hover {
+/* .tabela-usuarios tbody tr,.acoes > a:hover {
     background-color: rgba(245, 142, 142, 0.1);
     color: rgb(115, 0, 255);
-}
+} */
 
 .acoes, .acoes > a {
     display: flex;
@@ -84,11 +74,8 @@
     .tabela-usuarios thead th {
         width: 1000px;
         text-align: left;
-        /* padding: 1px; */
         margin: 0px;
         font-size: 14px;
-        /* height: 2px; */
-        /* text-align: justify; */
     }
 
     .tabela-usuarios tbody td {
